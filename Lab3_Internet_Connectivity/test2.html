@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<body>
+   Current Temperature:<span id="current_temp"></span>&deg; C<br>
+    Desired Temperature:<span id="desired_temp"></span>&deg; C<br>
+
+<button id="connectbutton" onclick="start()">Refresh Data</button>
+ <br>
+
+  <form action="https://api.particle.io/v1/devices/36001b001447393334363636/setMode?access_token=36f9d63a1fe6f3a90bddaae80d918a2ab0446d73" method="POST">
+    <input type="radio" name="args" value="Heat">Set thermostat mode to HEAT.<br>
+    <input type="radio" name="args" value="Off">Set thermostat mode to OFF.<br>
+    <input type="radio" name="args" value="Cool">Set thermostat mode to COOL.<br>
+    <input type="radio" name="args" value="RedAlert">Set thermostat mode to REDALERT.<br>
+    <input type="submit" value="Do it!">
+  </form>
+
+
+
+    <script type="text/javascript">
+    function start(objButton) {
+        var deviceID = "36001b001447393334363636";
+        var accessToken = "36f9d63a1fe6f3a90bddaae80d918a2ab0446d73";
+        var baseURL = "https://api.particle.io/v1/devices/"
+
+        var varName = "current_temp";
+        requestURL = baseURL + deviceID + "/" + varName + "/?access_token=" + accessToken;
+        $.getJSON(requestURL, function(json) {
+                 document.getElementById("current_temp").innerHTML = json.result;
+                 });
+
+        var varName = "desired_temp";
+        requestURL = baseURL + deviceID + "/" + varName + "/?access_token=" + accessToken;
+        $.getJSON(requestURL, function(json) {
+                 document.getElementById("desired_temp").innerHTML = json.result;
+                 });
+    }
+    </script>
+
+<form action="https://api.particle.io/v1/devices/36001b001447393334363636/set_temp?access_token=36f9d63a1fe6f3a90bddaae80d918a2ab0446d73
+" method="POST">
+<input type="text" name="args" value="(0-40)"><br>
+<input type="submit" value="Set Temperature">
+</form>
+
+</body>
+</html>
+
+
