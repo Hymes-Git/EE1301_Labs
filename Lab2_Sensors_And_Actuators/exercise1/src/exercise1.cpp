@@ -5,7 +5,7 @@
 #include "Particle.h"
 #line 1 "c:/Users/gahym/EE1301/IOT_Labs/Lab2_Sensors_And_Actuators/exercise1/src/exercise1.ino"
 // IOT Lab 2 Exercise 1
-// Grant Hymes
+// Lily Hymes
 // EE1301
 
 void setup();
