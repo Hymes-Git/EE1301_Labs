@@ -7,7 +7,7 @@
 /*
  * Project Exercise 3
  * Description:
- * Author: Grant Hymes Hymes019
+ * Author: Lily Hymes Hymes019
  * Date: 3-19-22 EE1301
  */
 
