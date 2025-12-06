@@ -1,7 +1,7 @@
 /*
  * Project Exercise 2 (Change LED Based on TEMP or HTML)
  * Description:
- * Author: Grant Hymes Hymes019
+ * Author: Lily Hymes Hymes019
  * Date: 3-18-22 EE1301
  */
 
